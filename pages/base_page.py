@@ -28,7 +28,7 @@ class BasePage:
 
     @allure.step('Клик по видимому элементу')
     def click_to_visible_element(self, locator):
-        WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located(locator)).click()
+        self.driver.find_element(*locator).click()
 
     @allure.step('Проверка отображения элемента на странице')
     def check_element(self, locator):

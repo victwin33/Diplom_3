@@ -14,14 +14,37 @@ class OrdersPage(BasePage):
         locator = locator.format(order)
         return self.find_element((method, locator))
 
+    @allure.step('Получение заголовка в окне с деталями заказа')
+    def check_order_structure_title(self):
+        return self.check_element(OrdersPageLocators.ORDER_STRUCTURE_TITLE)
+
+
+    @allure.step('Найдите название списка заказов')
+    def find_order_list_title(self):
+        return self.find_element(OrdersPageLocators.ORDERS_LIST_TITLE)
+
+    @allure.step('Ожидание отображения заголовка списка заказов')
+    def wait_visibility_order_list_title(self):
+        return self.wait_visibility_element(OrdersPageLocators.ORDERS_LIST_TITLE)
+
     @allure.step('Получение количества заказов выполненных за все время')
     def get_total_orders_number(self):
         return self.get_text_of_element(OrdersPageLocators.COMPLETED_ORDERS_TOTAL)
+
+    @allure.step('Ожидание отображения заголовка списка заказов')
+    def wait_visibility_order_list_title(self):
+        return self.wait_visibility_element(OrdersPageLocators.ORDERS_LIST_TITLE)
 
     @allure.step('Получение количества заказов выполненных за сегодня')
     def get_today_orders_number(self):
         return self.get_text_of_element(OrdersPageLocators.COMPLETED_ORDERS_TODAY)
 
+    @allure.step('Ожидание отображения заказов в списке "В работе"')
+    def wait_visibility_order_in_work(self):
+        return self.wait_visibility_element(OrdersPageLocators.ORDER_IN_WORK)
+
     @allure.step('Получение заказа по номеру в разделе "В работе"')
     def get_order_number_in_work(self):
         return self.get_text_of_element(OrdersPageLocators.ORDER_IN_WORK)
+
+

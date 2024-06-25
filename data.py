@@ -8,3 +8,10 @@ class Urls:
     RESET_PASSWORD_PAGE = 'https://stellarburgers.nomoreparties.site/reset-password'
     ORDERS_HISTORY = 'https://stellarburgers.nomoreparties.site/account/order-history'
     FEED = 'https://stellarburgers.nomoreparties.site/feed'
+
+
+
+class Text:
+    POPUP_TEXT = "Детали ингредиента"
+    BUTTON_TEXT = "Войти"
+
